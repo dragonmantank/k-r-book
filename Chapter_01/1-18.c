@@ -9,9 +9,7 @@ main()
     int len, c;
     int max;
     char line[MAXLINE];
-    char longest[MAXLINE];
 
-    max = 0;
     while ((len = readline(line, MAXLINE)) > 0) {
         len--;
         while (len >= 0 && (line[len] == ' ' || line[len] == '\t' || line[len] == '\r' || line[len] == '\n')) {
