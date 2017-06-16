@@ -1,8 +1,8 @@
 #include <stdio.h>
 #define MAXLINE 1000
+#define MINLINE 80
 
 int readline(char line[], int maxline);
-void copy(char to[], char from[]);
 
 main()
 {
@@ -23,14 +23,9 @@ main()
             }
         }
 
-        if (len > max) {
-            max = len;
-            copy(longest, line);
-        }
-    }
-
-    if(max > 0) {
-        printf("Longest line was %d characters long\n%s\n", max, longest);
+        if (len > MINLINE) {
+            printf("%s", line);
+        }        
     }
 
     return 0;
@@ -51,12 +46,4 @@ int readline(char line[], int maxline)
 
     line[i] = '\0';
     return i;
-}
-
-void copy(char to[], char from[])
-{
-    int i = 0;
-    while ((to[i] = from[i]) != '\0') {
-        ++i;
-    }
 }
